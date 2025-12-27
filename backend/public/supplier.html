@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supplier Part Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+    }
+    button {
+      background-color: #0072c6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Aircraft Part Entry (Supplier)</h2>
+
+  <input id="supplierId" placeholder="Supplier ID">
+  <input id="partId" placeholder="Part ID">
+  <input id="partName" placeholder="Part Name">
+  <input id="batchNo" placeholder="Batch No">
+  <input id="quantity" type="number" placeholder="Quantity">
+  <input id="mfgDate" type="date">
+
+  <button onclick="submitPart()">Submit</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  async function submitPart() {
+    const data = {
+      supplierId: document.getElementById("supplierId").value,
+      partId: document.getElementById("partId").value,
+      partName: document.getElementById("partName").value,
+      batchNo: document.getElementById("batchNo").value,
+      quantity: parseInt(document.getElementById("quantity").value),
+      mfgDate: document.getElementById("mfgDate").value
+    };
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerText = "Submitting...";
+
+    try {
+      const response = await fetch("http://localhost:5000/submitPart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.status === "SUCCESS") {
+        resultDiv.style.color = "green";
+        resultDiv.innerText = "✔ Part stored successfully in DB2";
+      } else {
+        resultDiv.style.color = "red";
+        resultDiv.innerText = "✖ Failed: " + result.message;
+      }
+    } catch (error) {
+      resultDiv.style.color = "red";
+      resultDiv.innerText = "✖ Backend not reachable";
+    }
+  }
+</script>
+
+</body>
+</html>
