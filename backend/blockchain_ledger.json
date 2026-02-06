@@ -10,5 +10,17 @@
     "partId": "PART004",
     "hash": "22fac04ec3bf8e9eb1ea7e22985bcfa23361c510abdfc8a99f6a71e344c01d79",
     "timestamp": "2025-12-23T18:56:33.404Z"
+  },
+  {
+    "txId": "TX-1767977536742",
+    "partId": "SHI300",
+    "hash": "087f02105a2d09c5efa973da838ba4d5f09a943e99757deebc61cac8147e42b3",
+    "timestamp": "2026-01-09T16:52:16.742Z"
+  },
+  {
+    "txId": "TX-1769374595114",
+    "partId": "regrge",
+    "hash": "119f4e2ce38f28ed9a7d95f3962211370fe45d2ed6ff73d9713adc5ac2fe9a72",
+    "timestamp": "2026-01-25T20:56:35.114Z"
   }
 ]
