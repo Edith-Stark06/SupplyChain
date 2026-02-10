@@ -14,6 +14,9 @@
     "body-parser": "^2.2.1",
     "crypto": "^1.0.1",
     "express": "^5.2.1",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
     "fabric-ca-client": "^2.2.20",
     "fabric-network": "^2.2.20",
     "ibm_db": "^3.3.4"

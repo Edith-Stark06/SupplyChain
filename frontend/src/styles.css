@@ -1,0 +1,249 @@
+* { box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fb 0%, #e9ecef 100%);
+  margin: 0;
+  padding: 0;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  color: #0b5ea8;
+  border-bottom-color: #0b5ea8;
+}
+
+.login-form input, .login-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus, .login-form select:focus {
+  outline: none;
+  border-color: #0b5ea8;
+  box-shadow: 0 0 0 3px rgba(11, 94, 168, 0.1);
+}
+
+/* App Layout */
+.app { 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav { 
+  background: linear-gradient(90deg, #0b5ea8 0%, #0a4a8a 100%);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-height: 60px;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.nav a, .nav-user button { 
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 13px;
+}
+
+.nav-user button {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.nav-user button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.main { 
+  padding: 24px;
+  flex: 1;
+}
+
+.form-container {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+input, textarea { 
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus { 
+  outline: none;
+  border-color: #0b5ea8;
+  box-shadow: 0 0 0 3px rgba(11, 94, 168, 0.1);
+}
+
+input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+button { 
+  padding: 10px 16px;
+  margin-top: 8px;
+  margin-right: 8px;
+  background-color: #0b5ea8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0a4a8a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(11, 94, 168, 0.3);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+table { 
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+th, td { 
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+tr:hover {
+  background: #f9f9f9;
+}
+
+code {
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+details {
+  background: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  border-left: 3px solid #0b5ea8;
+}
+
+summary {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px;
+  font-weight: 600;
+  color: #0b5ea8;
+}
+
+pre {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+}
